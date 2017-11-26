@@ -1,6 +1,7 @@
 //todo: mooie github maken
 //multi video streaming
 //firefox fixen
+//front/back camera picker toevoegen
 
 document.addEventListener('DOMContentLoaded', init, false);
 
