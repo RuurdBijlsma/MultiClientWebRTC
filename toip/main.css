@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: roboto;
+    font-weight: 300;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.container {
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 700px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.container input {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.wide{
+    width:100%;
+}
+.video{
+    display: block;
+}
+
+.container  input[type='submit'] {
+    width: 100%;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.20);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+*:focus {
+    outline: none;
+}
+
+*:link,
+*:visited {
+    color: white;
+    text-decoration: none;
+}
+
+::-moz-selection {
+    color: white;
+    background: rgb(255, 80, 0);
+}
+
+::selection {
+    color: white;
+    background: rgb(255, 80, 0);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+:-moz-placeholder {
+    color: rgba(255,255,255,0.6);
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: rgba(255,255,255,0.6);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number] textarea {
+    cursor: text;
+}
+
+input[type='button'],
+input[type='submit'],
+a[href] {
+    cursor: pointer;
+}
