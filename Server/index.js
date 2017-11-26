@@ -2,8 +2,12 @@ var https = require('https'),
     fs = require('fs'),
     maxClients = 4,
     options = {
-        key: fs.readFileSync('../Certificate/key.pem'),
-        cert: fs.readFileSync('../Certificate/cert.pem'),
+        // Real cert
+        key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurdbijlsma.com/privkey.pem'),
+        cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurdbijlsma.com/fullchain.pem'),
+        // Development cert
+        // key: fs.readFileSync('../Certificate/key.pem'),
+        // cert: fs.readFileSync('../Certificate/cert.pem'),
     },
     server = https.createServer(options),
     port = 443,

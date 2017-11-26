@@ -41,7 +41,7 @@ function init() {
         e.preventDefault();
         let room = e.target.room.value;
         username = e.target.username.value;
-        connection = new RTCConnection(room, "https://wake.ruurdbijlsma.com");
+        connection = new RTCConnection(room, "https://rtc.ruurdbijlsma.com");
         // connection = new RTCConnection(room, "https://localhost:443");
 
         connection.on('signalServerConnect', () => {
