@@ -1,4 +1,5 @@
 //todo: mooie github maken
+//multi video streaming
 //firefox fixen
 
 document.addEventListener('DOMContentLoaded', init, false);
@@ -42,13 +43,23 @@ function init() {
         connection = new RTCConnection(room, "https://wake.ruurdbijlsma.com");
         // connection = new RTCConnection(room, "https://localhost:443");
 
-        connection.on('signalServerConnect', () => console.log("Connected to signal server"));
-        connection.on('signalServerDisconnect', () => console.log("Disconnected from signal server"));
+        connection.on('signalServerConnect', () => {
+            console.log("Connected to signal server");
+            roomPickerForm.innerHTML=`<p>Connected to signalServer</p>`;
+        });
+        connection.on('signalServerDisconnect', () => {
+            console.log("Disconnected from signal server");
+            roomPickerForm.innerHTML+=`<p>Disconnected from signalServer</p>`;
+        });
         connection.on('peerConnect', () => {
             console.log("Connected to peer");
+            roomPickerForm.innerHTML+=`<p>Connected to peer</p>`;
             connectionReady = true;
         });
-        connection.on('peerDisconnect', () => console.log("Disconnected from peer"));
+        connection.on('peerDisconnect', () => {
+            console.log("Disconnected from peer");
+            roomPickerForm.innerHTML+=`<p>Disconnected from peer</p>`;
+        });
         connection.on('message', data => {
             let {sender, message} = JSON.parse(data);
             output.innerHTML += `<p>${sender}:${message}</p>`;
