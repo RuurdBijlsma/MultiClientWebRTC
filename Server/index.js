@@ -4,11 +4,11 @@ var port = 8080;
 var https        = require('https');
 var server = https.createServer({
     // Real cert
-    // key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/privkey.pem'),
-    // cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/fullchain.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/fullchain.pem'),
     // Development cert
-    key: fs.readFileSync('Certificate/key.pem'),
-    cert: fs.readFileSync('Certificate/cert.pem'),
+    // key: fs.readFileSync('Certificate/key.pem'),
+    // cert: fs.readFileSync('Certificate/cert.pem'),
     rejectUnauthorized: false
 },app);
 server.listen(port);
