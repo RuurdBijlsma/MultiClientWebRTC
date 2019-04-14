@@ -6,7 +6,7 @@ var server = https.createServer({
     requestCert: false,
     rejectUnauthorized: false
 },app);
-server.listen(443);
+server.listen(5500);
 
 var io = require('socket.io').listen(server);
 
