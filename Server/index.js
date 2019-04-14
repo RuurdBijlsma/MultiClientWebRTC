@@ -1,6 +1,6 @@
 var fs = require( 'fs' );
 var app = require('express')();
-var port = 8080;
+var port = 443;
 var https        = require('https');
 var server = https.createServer({
     // Real cert
