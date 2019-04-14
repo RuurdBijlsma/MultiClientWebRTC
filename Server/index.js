@@ -3,8 +3,8 @@ var https = require('https'),
     maxClients = 4,
     options = {
         // Real cert
-        key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurdbijlsma.com/privkey.pem'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurdbijlsma.com/fullchain.pem'),
+        key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/privkey.pem'),
+        cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/fullchain.pem'),
         // Development cert
         // key: fs.readFileSync('../Certificate/key.pem'),
         // cert: fs.readFileSync('../Certificate/cert.pem'),
