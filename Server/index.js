@@ -16,6 +16,10 @@ console.log("Now listening on port ",port);
 
 var io = require('socket.io').listen(server);
 
+app.get("/", function(request, response){
+    response.send("HELLO")
+});
+
 io.on('connection', socket => {
     var ip = socket.request.connection.remoteAddress.split(':').splice(-1)[0];
     console.log("Client connected with ip:", ip);
