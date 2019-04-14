@@ -1,21 +1,20 @@
-var https = require('https'),
-    fs = require('fs'),
-    maxClients = 4,
-    options = {
-        // Real cert
-        key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/privkey.pem'),
-        cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/fullchain.pem'),
-        // Development cert
-        // key: fs.readFileSync('../Certificate/key.pem'),
-        // cert: fs.readFileSync('../Certificate/cert.pem'),
-    },
-    server = https.createServer(options),
-    port = 443,
-    io = require('socket.io')(server);
-
+var fs = require( 'fs' );
+var app = require('express')();
+var port = 8080;
+var https        = require('https');
+var server = https.createServer({
+    // Real cert
+    // key: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/privkey.pem'),
+    // cert: fs.readFileSync('/etc/letsencrypt/live/rtc.ruurd.dev/fullchain.pem'),
+    // Development cert
+    key: fs.readFileSync('Certificate/key.pem'),
+    cert: fs.readFileSync('Certificate/cert.pem'),
+    rejectUnauthorized: false
+},app);
 server.listen(port);
-console.log('Now listening on ' + port);
+console.log("Now listening on port ",port);
 
+var io = require('socket.io').listen(server);
 
 io.on('connection', socket => {
     var ip = socket.request.connection.remoteAddress.split(':').splice(-1)[0];
