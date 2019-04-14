@@ -15,5 +15,5 @@ io.sockets.on('connection',function (socket) {
 });
 
 app.get("/", function(request, response){
-    reseponse.send("DOEI");
+    response.send("DOEI");
 })
